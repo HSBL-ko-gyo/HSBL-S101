@@ -1,2 +1,2 @@
 # HSBL-S101
-HSBL-S101_ChameleonKey
+HSBL-S101_Chameleon
