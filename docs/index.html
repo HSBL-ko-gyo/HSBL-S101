@@ -1,44 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
+
 <head>
-    <title>HSBL-S101 Chameleon</title>
     <meta charset="UTF-8">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            color: #333333;
-        }
-        .content {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        a {
-            display: block;
-            margin: 10px 0;
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="icon" type="image/png" href="./image/favicon.png">
+    <title>HSBL-S101 Chameleon </title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
-    <div class="content">
-        <h1>HSBL-S101 Chameleon</h1>
-        <p>現在、HSBL-S101 Chameleonは工事中です。進行状況については、以下を確認下さい。</p>
-        <p>ハシビロ工業 各種リンク</p>
-        <a href="https://github.com/HSBL-ko-gyo/HSBL-S101/tree/main" target="_blank">GitHub</a>
-        <a href="https://www.youtube.com/channel/UCI8IN2rz2UUmCigfGvsL4tw" target="_blank">YouTube Channel</a>
-        <a href="https://sites.google.com/view/hsbl-industrial-hp/home" target="_blank">Official Website</a>
-        <a href="https://twitter.com/HSBL_Industrial" target="_blank">(X)Twitter</a>
-    </div>
+    <header>
+        HSBL-S101 Chameleon β
+        <nav>
+            <!--<a href="" style="color: white;">Firmware writing</a>-->
+            <!--<a href="" style="color: white;">FAQ</a>  -->
+            <a href="https://github.com/HSBL-ko-gyo/HSBL-S101" style="color: white;">GitHub</a>
+            <a href="https://sites.google.com/view/hsbl-industrial-hp/home" style="color: white;">Product</a>
+        </nav>
+    </header>
+    <main>
+        <div class="control-group fixed-button">
+            <button id="connectButton">ATOMS3 Connect</button>
+            <span id="statusMessage"></span>
+        </div>
+        <hr>
+        <h2>Basic Settings</h2>
+
+        <!-- 画像送信コントロール -->
+        <div class="control-group">
+            <input type="file" id="imageInput">
+            <button id="sendButton" disabled>Send to image</button>
+            <span id="progressMessage" style="margin-left: 10px;">0%</span>
+        </div>
+        <!-- 画面回転コントロール -->
+        <div class="control-group">
+            <label>Screen Rotation:</label>
+            <input type="radio" id="rotation0" name="rotation" value="0" checked>
+            <label for="rotation0">0°</label>
+            <input type="radio" id="rotation1" name="rotation" value="1">
+            <label for="rotation1">90°</label>
+            <input type="radio" id="rotation2" name="rotation" value="2">
+            <label for="rotation2">180°</label>
+            <input type="radio" id="rotation3" name="rotation" value="3">
+            <label for="rotation3">270°</label>
+            <button id="setScreenRotation" disabled>Set Screen Rotation</button>
+        </div>
+        <!-- ボトムLEDカラーコントロール -->
+        <div class="control-group">
+            <label for="bottomLedColor">Bottom LED Color:</label><br>
+            <div class="color-presets">
+                <button class="color-preset" data-color="255,0,0,255"
+                    style="background-color: rgb(255, 0, 0);">R</button>
+                <button class="color-preset" data-color="0,255,0,255"
+                    style="background-color: rgb(0, 255, 0);">G</button>
+                <button class="color-preset" data-color="0,0,255,255"
+                    style="background-color: rgb(0, 0, 255);">B</button>
+                <button class="color-preset" data-color="0,255,255,255"
+                    style="background-color: rgb(0, 255, 255); color: black;">C</button>
+                <button class="color-preset" data-color="255,255,0,255"
+                    style="background-color: rgb(255, 255, 0); color: black;">Y</button>
+                <button class="color-preset" data-color="255,0,255,255"
+                    style="background-color: rgb(255, 0, 255); color: white;">P</button>
+                <button class="color-preset" data-color="255,255,255,255"
+                    style="background-color: rgb(255, 255, 255); color: black;">W</button>
+            </div>
+            <p>R: <input type="range" id="redSlider" min="0" max="255" value="255" draggable="false"></p>
+            <p>G: <input type="range" id="greenSlider" min="0" max="255" value="255" draggable="false"></p>
+            <p>B: <input type="range" id="blueSlider" min="0" max="255" value="255" draggable="false"></p>
+            <p>Bri: <input type="range" id="brightnessSlider" min="0" max="255" value="64" draggable="false"></p>
+            <div style="display: flex; align-items: center;">
+                <label for="bottomLedColor">(R,G,B,Brightness)</label>
+                <input type="text" id="bottomLedColor" value="255,255,255,64"
+                    style="margin-left: 10px; margin-right: 10px;">
+                <div id="colorPreview" style="width: 50px; height: 50px; position: relative; margin-right: 10px;">
+                    <div id="colorLayer" style="width: 100%; height: 100%; position: absolute; pointer-events: none;">
+                    </div>
+                    <div id="brightnessLayer"
+                        style="width: 100%; height: 100%; position: absolute; background-color: black; pointer-events: none;">
+                    </div>
+                </div>
+                <button id="setBottomLedColor" disabled>Set Bottom LED Color</button>
+            </div>
+        </div>
+        <hr>
+        <h2>Key Macro</h2>
+        <p>The last sent item will be applied to the button</p>
+        <p>Key Macroは今後有料で配布する予定です。coming soon</p>
+        <p>詳細は<a
+                href="https://sites.google.com/view/hsbl-industrial-hp/home/2023%E4%BD%9C%E5%93%81chameleon-key?authuser=0">Chameleon
+                Key</a>をご覧ください。</p>
+        <footer>
+            <p>Created by ハシビロ工業</p>
+            <p>Version: 0.1.0</p>
+        </footer>
+    </main>
+
 </body>
+<script src="script.js"></script>
+</body>
+
 </html>
