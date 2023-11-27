@@ -1,15 +1,15 @@
 # HSBL-S101_Chameleon
 
-<img src="https://github.com/HSBL-ko-gyo/HSBL-S101/assets/128065816/f426f360-683a-4c48-9f0b-9ebb9d87e18e" width="128" height="128" alt="HSBL-S101_LOGO">
+<img src="https://github.com/HSBL-ko-gyo/HSBL-S101/assets/128065816/e6fd9d8b-b2a0-480f-8673-4b478d5ed2fc"  height="240" alt="HSBL-S101_use">
 
-HSBL-S101_Chameleonは、AtomS3に対して、フルカラーLEDの色や画面の回転値を制御し、  
-画像データを表示・保存する機能を提供します。
+HSBL-S101_Chameleonは、AtomS3に対してWebtoolを通じて画像データを送信し、表示・保存します。画面の回転値等も保存可能です。
 
 > ※このプロジェクトは  
 「Chameleon Key：シングルディスプレイキーボード」の機能制限版です  
 HSBL-S101_Chameleon Keyは今後有料で配布する予定です。  
 詳細は[製品ページ](https://sites.google.com/view/hsbl-industrial-hp/home/2023%E4%BD%9C%E5%93%81chameleon-key)をご覧ください。  
-><img src="https://github.com/HSBL-ko-gyo/HSBL-S101/assets/128065816/1e1bd703-e5ae-439e-a196-002bb3161693" width="600"  alt="HSBL-S100">  
+><img src="https://github.com/HSBL-ko-gyo/HSBL-S101/assets/128065816/1e1bd703-e5ae-439e-a196-002bb3161693" width="240"  alt="HSBL-S100">  
+
 
 
 ---
@@ -36,6 +36,7 @@ HSBL-S101_Chameleon Keyは今後有料で配布する予定です。
 ## 必要なハードウェア
 
 - AtomS3
+- (オプション:後日公開)ボトムLED
   
 ## 必要なライブラリ
 
@@ -50,21 +51,3 @@ HSBL-S101_Chameleon Keyは今後有料で配布する予定です。
 - 画面の回転値を設定し、その回転値をSPIFFSに保存・読み込む機能
 - ピクセルデータをSPIFFSに保存・読み込む機能
 
-## ソースコードのビルドと書き込み
-今後 ESP Web Tools等を利用し簡単に書き込みが出来るようにする予定です。
-
-### Arduino IDEを使用する場合
-
-1. Arduino IDEを開きます。
-2. メニューから「ファイル」->「開く」を選択し、ダウンロードした.inoファイルを開きます。
-3. 「ツール」->「ボード」から「AtomS3」を選択します。
-4. 「ツール」->「ポート」からAtomS3が接続されているポートを選択します。
-5. 「スケッチ」->「アップロード」を選択してプログラムをAtomS3に書き込みます。
-   
-### コンパイルされた.binファイルを書き込む場合
-
-1. .binファイルをダウンロードします。
-2. AtomS3をPCに接続し、AtomS3をブートローダーモードにします。
-3. ESP32 Download Toolやesptoolなどのツールを使用して.binファイルをAtomS3に書き込みます。
-
-注意: コンパイルされた.binファイルを書き込む場合、書き込みツールの設定やAtomS3のブートローダーモードへの切り替え方法など、具体的な手順は使用するツールやハードウェアにより異なります。詳細は各ツールやハードウェアの公式ドキュメンテーションを参照してください。
