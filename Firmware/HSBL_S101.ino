@@ -1,3 +1,9 @@
+/*
+ * HSBL_S101.ino
+ * 
+ * 作成者: ハシビロ工業
+ * バージョン: 0.1.0
+ */
 #include <M5GFX.h>
 #include <FS.h>
 #include <SPIFFS.h>
