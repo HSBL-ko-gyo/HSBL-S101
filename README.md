@@ -2,7 +2,8 @@
 
 <img src="https://github.com/HSBL-ko-gyo/HSBL-S101/assets/128065816/e6fd9d8b-b2a0-480f-8673-4b478d5ed2fc"  height="240" alt="HSBL-S101_use">
 
-HSBL-S101_Chameleonは、AtomS3に対してWebtoolを通じて画像データを送信し、表示・保存します。画面の回転値等も保存可能です。
+HSBL-S101_Chameleonは、AtomS3に対してWebtoolを通じて画像データを送信し、表示・保存します。  
+画面の回転値等も保存可能です。
 
 > ※このプロジェクトは  
 「Chameleon Key：シングルディスプレイキーボード」の機能制限版です  
