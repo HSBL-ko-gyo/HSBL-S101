@@ -9,7 +9,7 @@ HSBL-S101_Chameleonは、AtomS3に対してWebtoolを通じて画像データを
 「Chameleon Key：シングルディスプレイキーボード」の機能制限版です  
 HSBL-S101_Chameleon Keyは今後有料で配布する予定です。  
 詳細は[製品ページ](https://sites.google.com/view/hsbl-industrial-hp/home/2023%E4%BD%9C%E5%93%81chameleon-key)をご覧ください。  
-><img src="https://github.com/HSBL-ko-gyo/HSBL-S101/assets/128065816/1e1bd703-e5ae-439e-a196-002bb3161693" width="240"  alt="HSBL-S100">  
+><img src="https://github.com/HSBL-ko-gyo/HSBL-S101/assets/128065816/1e1bd703-e5ae-439e-a196-002bb3161693" height="240"  alt="HSBL-S100">  
 
 
 
@@ -17,7 +17,7 @@ HSBL-S101_Chameleon Keyは今後有料で配布する予定です。
 
 ## Webベースの設定ツール
 
-<img src="https://github.com/HSBL-ko-gyo/HSBL-S101/assets/128065816/55ecf563-8887-42aa-85d7-8503f43fce65" width="480" alt="HSBL-S101_WEBtools">
+<img src="https://github.com/HSBL-ko-gyo/HSBL-S101/assets/128065816/55ecf563-8887-42aa-85d7-8503f43fce65" height="240" alt="HSBL-S101_WEBtools">
 
 このプロジェクトには、Web設定ツールが含まれています。  
 設定ツールURL: https://hsbl-ko-gyo.github.io/HSBL-S101/  
