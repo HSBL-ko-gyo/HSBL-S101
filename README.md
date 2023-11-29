@@ -7,7 +7,7 @@ HSBL-S101_Chameleonは、AtomS3に対してWebtoolを通じてUSB経由で画像
 
 > ※このプロジェクトは  
 「Chameleon Key：シングルディスプレイキーボード」の機能制限版です  
-HSBL-S101_Chameleon Keyは今後有料で配布する予定です。  
+HSBL-S100_Chameleon Keyは今後有料で配布する予定です。  
 詳細は[製品ページ](https://sites.google.com/view/hsbl-industrial-hp/home/2023%E4%BD%9C%E5%93%81chameleon-key)をご覧ください。  
 ><img src="https://github.com/HSBL-ko-gyo/HSBL-S101/assets/128065816/1e1bd703-e5ae-439e-a196-002bb3161693" width="320"  alt="HSBL-S100">  
 
