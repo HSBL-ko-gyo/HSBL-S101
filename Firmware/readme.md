@@ -17,7 +17,7 @@
 ## ファームウェア書き込み方法
 今後 ESP Web Tools等を利用し簡単に書き込みが出来るようにする予定です。
 
-### M5Burnerを使用する場合
+### [M5Burner](https://docs.m5stack.com/en/download#:~:text=UIFLOW%20FIRMWARE%20BURNING%20TOOL)を使用する場合
 公開中です。 ATOMS3の欄で「HSBL-S101」と検索し書き込みを行ってください。
 
 ### Arduino IDEを使用する場合
