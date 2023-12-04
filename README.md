@@ -33,22 +33,22 @@ HSBL-S100_Chameleon Keyは今後有料で配布する予定です。
 
 ---
 
+## ファームウェア書き込み方法
+[コチラから](https://github.com/HSBL-ko-gyo/HSBL-S101/tree/main/Firmware#%E3%83%95%E3%82%A1%E3%83%BC%E3%83%A0%E3%82%A6%E3%82%A7%E3%82%A2%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF%E6%96%B9%E6%B3%95)
+
+
+---
 
 ## 必要なハードウェア
 
 - AtomS3
 - (オプション:後日公開)ボトムLED
   
-## 必要なライブラリ
+## ビルドに必要なライブラリ
 
 - M5GFX
 - FS
 - SPIFFS
 - Adafruit_NeoPixel
   
-## 機能
-
-- LEDの色を設定し、その色情報をSPIFFSに保存・読み込む機能
-- 画面の回転値を設定し、その回転値をSPIFFSに保存・読み込む機能
-- ピクセルデータをSPIFFSに保存・読み込む機能
 
