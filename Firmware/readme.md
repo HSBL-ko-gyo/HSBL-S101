@@ -20,6 +20,9 @@
 ### [M5Burner](https://docs.m5stack.com/en/download)を使用する場合
 公開中です。 ATOMS3の欄で「HSBL-S101」と検索し書き込みを行ってください。
 
+![image](https://github.com/HSBL-ko-gyo/HSBL-S101/assets/128065816/8f3c08dc-ccaa-4dad-96e0-bd8c87d7ed75)
+
+
 ### Arduino IDEを使用する場合
 
 1. Arduino IDEを開きます。
