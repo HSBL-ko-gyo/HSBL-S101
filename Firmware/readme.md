@@ -9,7 +9,7 @@
    - Description: This is the main Arduino sketch file for the HSBL_S101 project.
 
 ## ファームウェア書き込み方法
-### ・[設定WEBツール内より(ESP-web-tool)](https://hsbl-ko-gyo.github.io/HSBL-S101/fw-tools/)
+### ・[設定WEBツール内より(esp-web-tool)](https://hsbl-ko-gyo.github.io/HSBL-S101/fw-tools/)
 画面の指示に従ってWINPCからchorome系のブラウザより書き込みを行ってください。
 
 途中、「Erase device」のチェックボックスは  
