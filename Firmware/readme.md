@@ -4,7 +4,7 @@
 1. **build/m5stack.esp32.m5stack-atoms3**
    - 説明: M5Stack ESP32用のビルド設定またはコンパイルされたバイナリが含まれるディレクトリで、M5Stack AtomS3モデル向けに最適化されています。
 
-2. **HSBL_S101.ino**（ファイル）
+2. **HSBL_S100
    - 説明: HSBL_S101プロジェクトのメインArduinoスケッチファイル
      
 **English:**
