@@ -1,11 +1,11 @@
 ## filelist
 
 **Japanese:**
-1. **HSBL_S100
+1. **HSBL_S100**
    - 説明: HSBL_S101プロジェクトのメインArduinoスケッチファイル
      
 **English:**
-1. **HSBL_S100
+1. **HSBL_S100**
    - Description: This is the main Arduino sketch file for the HSBL_S101 project.
 
 ## ファームウェア書き込み方法
