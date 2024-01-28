@@ -1,23 +1,23 @@
 ## filelist
 
 **Japanese:**
-1. **build/m5stack.esp32.m5stack-atoms3**
-   - 説明: M5Stack ESP32用のビルド設定またはコンパイルされたバイナリが含まれるディレクトリで、M5Stack AtomS3モデル向けに最適化されています。
-
-2. **HSBL_S100
+1. **HSBL_S100
    - 説明: HSBL_S101プロジェクトのメインArduinoスケッチファイル
      
 **English:**
-1. **build/m5stack.esp32.m5stack-atoms3**
-   - Description: This directory contains build configurations or compiled binaries for the M5Stack ESP32, specifically optimized for the M5Stack AtomS3 model.
-
-2. **HSBL_S101.ino** (File)
+**HSBL_S101.ino** (File)
+1. **HSBL_S100
    - Description: This is the main Arduino sketch file for the HSBL_S101 project.
 
 ## ファームウェア書き込み方法
-今後 ESP Web Tools等を利用し簡単に書き込みが出来るようにする予定です。
+### [M5Burner](https://hsbl-ko-gyo.github.io/HSBL-S101/fw-tools/)
+画面の指示に従ってchorome系のブラウザより書き込みを行ってください。
 
-### [M5Burner](https://docs.m5stack.com/en/download)を使用する場合
+途中、「Erase device」  
+のチェックボックスはチェックを入れると本体メモリの情報(すでに書き込んだ画像等)  
+を消してファームウェアを書き込みます。  
+
+### [M5Burner](https://docs.m5stack.com/en/download)
 公開中です。 ATOMS3の欄で「HSBL-S101」と検索し書き込みを行ってください。
 
 ![image](https://github.com/HSBL-ko-gyo/HSBL-S101/assets/128065816/8f3c08dc-ccaa-4dad-96e0-bd8c87d7ed75)
