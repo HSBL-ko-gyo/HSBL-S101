@@ -9,14 +9,14 @@
    - Description: This is the main Arduino sketch file for the HSBL_S101 project.
 
 ## ファームウェア書き込み方法
-### [M5Burner](https://hsbl-ko-gyo.github.io/HSBL-S101/fw-tools/)
-画面の指示に従ってchorome系のブラウザより書き込みを行ってください。
+### ・[設定WEBツール内より(ESP-web-tool)](https://hsbl-ko-gyo.github.io/HSBL-S101/fw-tools/)
+画面の指示に従ってWINPCからchorome系のブラウザより書き込みを行ってください。
 
-途中、「Erase device」  
-のチェックボックスはチェックを入れると本体メモリの情報(すでに書き込んだ画像等)  
+途中、「Erase device」のチェックボックスは  
+チェックを入れると本体メモリの情報(すでに書き込んだ画像等)  
 を消してファームウェアを書き込みます。  
 
-### [M5Burner](https://docs.m5stack.com/en/download)
+### ・[M5Burner](https://docs.m5stack.com/en/download)
 公開中です。 ATOMS3の欄で「HSBL-S101」と検索し書き込みを行ってください。
 
 ![image](https://github.com/HSBL-ko-gyo/HSBL-S101/assets/128065816/8f3c08dc-ccaa-4dad-96e0-bd8c87d7ed75)
