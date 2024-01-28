@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src * 'unsafe-inline'; media-src *; img-src * data: content: blob:;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport"
+    content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+    crossorigin="anonymous"></script>
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+    crossorigin="anonymous"></script>
+
+  <link rel="icon" type="image/png" href="../image/favicon.png">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spinkit/2.0.1/spinkit.min.css" />
+  <script src="js/methods_bootstrap.js"></script>
+  <script src="js/components_bootstrap.js"></script>
+  <script src="js/components_utils.js"></script>
+  <script src="js/vue_utils.js"></script>
+  <script src="js/gql_utils.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vconsole/dist/vconsole.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+  <script type="module" src="https://unpkg.com/esp-web-tools@9.2.0/dist/web/install-button.js?module"></script>
+
+  <title>HSBL-S100 Firmware tools</title>
+</head>
+
+<body>
+  <header>
+    HSBL-S101 Chameleon β
+    <nav>
+      <a href="https://github.com/HSBL-ko-gyo/HSBL-S101/tree/main/Firmware" style="color: white;">Firmware</a>
+      <a href="https://github.com/HSBL-ko-gyo/HSBL-S101" style="color: white;">GitHub</a>
+      <a href="https://sites.google.com/view/hsbl-industrial-hp/home" style="color: white;">Product</a>
+    </nav>
+  </header>
+  <main>
+    <div id="top" class="container">
+      <h2>Firmware writing tools</h2>
+      <hr>
+      2024-01-28 |
+      <label>V0.1.0 ATOMS3</label>
+      <esp-web-install-button manifest="./Firmware/build/m5stack.esp32.m5stack-atoms3/manifest.json"></esp-web-install-button>
+      <br>
+      <hr>
+      <!--<progress-dialog v-bind:title="progress_title"></progress-dialog>-->
+      <progress-dialog v-bind:title="progress_title" style="display: none;"></progress-dialog>
+    </div>
+    <!-- ここに他の要素を追加します -->
+    <br>
+    <a href="https://github.com/HSBL-ko-gyo/HSBL-S101/tree/main/Firmware">このページ以外で書き込みたい場合</a>
+
+
+  </main>
+  <script src="js/start.js"></script>
+  <footer>
+    <p>Created by ハシビロ工業</p>
+  </footer>
+</body>
+
+</html>
