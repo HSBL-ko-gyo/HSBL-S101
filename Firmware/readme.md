@@ -10,6 +10,9 @@
 
 ## ファームウェア書き込み方法
 ### ・[設定WEBツール内より(esp-web-tool)](https://hsbl-ko-gyo.github.io/HSBL-S101/fw-tools/)
+
+![2024-01-28 22-44-07](https://github.com/HSBL-ko-gyo/HSBL-S101/assets/128065816/4a660665-c05b-470b-b776-d02dcc6780f8)
+
 画面の指示に従ってWINPCからchorome系のブラウザより書き込みを行ってください。
 
 途中、「Erase device」のチェックボックスは  
