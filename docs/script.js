@@ -1,4 +1,5 @@
 let currentPort;
+let progressTimeout;
 
     async function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -28,6 +29,23 @@ let currentPort;
 
     const PIXELS_PER_PACKET = 10;
 
+    function resetProgressTimeout() {
+        clearTimeout(progressTimeout);
+        progressTimeout = setTimeout(() => {
+            console.error("Progress was not updated for a period of time.");
+            document.getElementById('progressMessage').textContent = "0%";
+            document.getElementById('statusMessage').textContent = "Reset Send";
+            processedPixels = 0; // 進行状況をリセット
+            // ここでエラー処理を行う
+        }, 5000); // 5秒間進行状況が更新されなかったらエラーとする
+    }
+
+    function updateProgress(processedPixels, totalPixels) {
+        let progress = (processedPixels / totalPixels) * 100;
+        document.getElementById('progressMessage').textContent = `${progress.toFixed(2)}%`;
+        resetProgressTimeout(); // タイマーをリセット
+    }
+
     document.getElementById('sendButton').addEventListener('click', async () => {
         const imageInput = document.getElementById('imageInput');
         const file = imageInput.files[0];
@@ -37,45 +55,55 @@ let currentPort;
         canvas.width = 128;
         canvas.height = 128;
         let totalPixels = 128 * 128;
-        let processedPixels = 0;
+        let processedPixels = 0; // 進捗状況のリセット
+        let packetDataStr = ''; // 送信データの初期化
+
+        resetProgressTimeout(); // 進捗タイムアウトのリセット
 
         img.onload = async function () {
-            ctx.drawImage(img, 0, 0, 128, 128);
-            const imgData = ctx.getImageData(0, 0, 128, 128);
-            const writer = currentPort.writable.getWriter();
-            let packetDataStr = '';
+            try {
+                ctx.drawImage(img, 0, 0, 128, 128);
+                const imgData = ctx.getImageData(0, 0, 128, 128);
+                const writer = currentPort.writable.getWriter();
 
-            for (let y = 0; y < 128; y++) {
-                for (let x = 0; x < 128; x++) {
-                    const idx = (y * 128 + x) * 4;
-                    const r = imgData.data[idx];
-                    const g = imgData.data[idx + 1];
-                    const b = imgData.data[idx + 2];
-                    const rgb565Value = rgb888ToRgb565(r, g, b);
-                    packetDataStr += `${x},${y},${rgb565Value},`;
+                for (let y = 0; y < 128; y++) {
+                    for (let x = 0; x < 128; x++) {
+                        const idx = (y * 128 + x) * 4;
+                        const r = imgData.data[idx];
+                        const g = imgData.data[idx + 1];
+                        const b = imgData.data[idx + 2];
+                        const rgb565Value = rgb888ToRgb565(r, g, b);
+                        packetDataStr += `${x},${y},${rgb565Value},`;
 
-                    if (packetDataStr.split(',').length / 3 >= PIXELS_PER_PACKET) {
-                        packetDataStr += '\n';
-                        const packetDataUint8Array = new TextEncoder().encode(packetDataStr);
-                        await writer.write(packetDataUint8Array);
-                        await sleep(10);
-                        packetDataStr = '';
+                        if (packetDataStr.split(',').length / 3 >= PIXELS_PER_PACKET) {
+                            packetDataStr += '\n';
+                            const packetDataUint8Array = new TextEncoder().encode(packetDataStr);
+                            await writer.write(packetDataUint8Array);
+                            await sleep(10);
+                            packetDataStr = '';
+                        }
+
+                        processedPixels++;
+                        updateProgress(processedPixels, totalPixels);
                     }
-
-                    processedPixels++;
-                    let progress = (processedPixels / totalPixels) * 100;
-                    document.getElementById('progressMessage').textContent = `${progress.toFixed(2)}%`;
                 }
-            }
 
-            if (packetDataStr.length > 0) {
-                packetDataStr += '\n';
-                const packetDataUint8Array = new TextEncoder().encode(packetDataStr);
-                await writer.write(packetDataUint8Array);
-            }
+                if (packetDataStr.length > 0) {
+                    packetDataStr += '\n';
+                    const packetDataUint8Array = new TextEncoder().encode(packetDataStr);
+                    await writer.write(packetDataUint8Array);
+                }
 
-            writer.releaseLock();
-            document.getElementById('statusMessage').textContent = "送信完了";
+                writer.releaseLock(); // リソースの解放
+                document.getElementById('statusMessage').textContent = "Send Complete";
+            } catch (error) {
+                console.error("Send error:", error);
+                document.getElementById('progressMessage').textContent = "0%";
+                document.getElementById('statusMessage').textContent = "Send error";
+                processedPixels = 0; // 進行状況をリセット
+                // 必要に応じて他のUI要素をリセット
+                if(writer) writer.releaseLock(); // エラー発生時にもリソースを解放
+            }
         };
 
         img.src = URL.createObjectURL(file);
@@ -95,7 +123,7 @@ let currentPort;
             await writer.write(dataUint8Array);
             await sleep(10);
             writer.releaseLock();
-            document.getElementById('statusMessage').textContent = "底面LEDの色をセットしました";
+            document.getElementById('statusMessage').textContent = "Bottom LED color set";
         }
     });
 
@@ -117,7 +145,7 @@ let currentPort;
             await writer.write(dataUint8Array);
             await sleep(10);
             writer.releaseLock();
-            document.getElementById('statusMessage').textContent = "画面の回転をセットしました";
+            document.getElementById('statusMessage').textContent = "Screen rotation set.";
         }
     });
 
