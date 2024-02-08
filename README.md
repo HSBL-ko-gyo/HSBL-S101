@@ -42,7 +42,7 @@ HSBL-S100_Chameleon Keyは今後有料で配布する予定です。
 ## 必要なハードウェア
 
 - AtomS3
-- (オプション:後日公開)ボトムLED
+- (オプション)[HSBL-S100-01 RGB LED bottom for ATOM](https://github.com/HSBL-ko-gyo/HSBL-S100-01)
   
 ## ビルドに必要なライブラリ
 
